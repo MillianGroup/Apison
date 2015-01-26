@@ -11,32 +11,24 @@ use Apison\Sdk\Config\Config;
     takes care about changing the right database adapter
     Higher part of framework should communicate just with this class, not underlying classes.
     */
-    class DbConnectionService implements DbAdapterInterface
+    abstract class DbConnectionService implements DbAdapterInterface
     {
 
-        private $adapter;
-        $availibleAdapters = array(
+        private static $adapter;
+        private static $availibleAdapters = array(
             'mysql' => MysqlAdapter,
             'mongo' => MongoAdapter,
             'postgre' => PostgreAdapter,
         );
 
-
-        public function __construct()
-        {
-            $configValues = Config::returnConfigValues();
-            $this->setAdapter($this->configValues['adapter']);
-            $dbConn = $this->connect();
-        }
-
         private function setAdapter($adapter)
         {
-            $this->adapter = $availibleAdapters[$adapter] || $availibleAdapters["mysql"];
+            $this->adapter = $self->availibleAdapters[$adapter] || $self->availibleAdapters["mysql"];
         }
 
         public static function connect()
         {
-            return $adapter::connect($this->configValues);
+            return $adapter::connect(Config::returnConfigValues());
         }
 
         public static function findAll()

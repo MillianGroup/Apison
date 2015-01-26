@@ -2,7 +2,7 @@
 namespace Apison\Sdk\Services;
 class ServiceRegistry
 {
-    private $services = array();
+    private static $services = array();
 
     public static function instance()
     {
@@ -19,12 +19,12 @@ class ServiceRegistry
 
     public function registerService($serviceName, Service $serviceObj)
     {
-        $services[$serviceName] = $serviceObj;
+        $self->services[$serviceName] = $serviceObj;
     }
 
     public function getService($serviceName)
     {
-        return $services[$serviceName];
+        return $self->services[$serviceName];
     }
 
 }

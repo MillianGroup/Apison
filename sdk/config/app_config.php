@@ -3,7 +3,7 @@ namespace Apison\Sdk\Config;
 
     class Config
     {
-        $configValues = array(
+        private static $configValues = array(
             'adapter' = "mysql",
             'hostname' = "localhost:80",
             'dbHost' = "localhost:3307",
