@@ -1,5 +1,5 @@
 <?php
-
+namespace Apison\Sdk\Interfaces;
     /*
        Interface implements beforeSave() and afterSave()
        functions that will trigger action

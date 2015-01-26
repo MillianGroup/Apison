@@ -1,5 +1,5 @@
 <?php
-
+namespace Apison\Sdk\Services;
 class ServiceRegistry
 {
     private $services = array();
