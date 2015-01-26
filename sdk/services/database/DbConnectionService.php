@@ -7,7 +7,25 @@ namespace Apison\Sdk\Services\Database;
     */
     class DbConnectionService implements DbAdapterInterface
     {
+        public static function connect()
+        {
+            //TODO
+        }
 
+        public static function findAll()
+        {
+            //TODO
+        }
+
+        public static function findOneByAttributes()
+        {
+            //TODO
+        }
+
+        public static function findByAttributes()
+        {
+            //TODO
+        }
     }
 
 ?>

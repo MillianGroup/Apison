@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DbConnectionService.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DbConnectionService.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sdk/services/database/DbConnectionService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-              <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.15402038" vertical-offset="0" max-vertical-offset="883">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -83,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DbAdapterInteface.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DbAdapterInteface.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sdk/interfaces/DbAdapterInteface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.019252548" vertical-offset="0" max-vertical-offset="883">
-              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -113,11 +113,11 @@
         <option value="$PROJECT_DIR$/sdk/services/database/postgre/PostgreAdapter.php" />
         <option value="$PROJECT_DIR$/sdk/interfaces/ModelSaveInterface.php" />
         <option value="$PROJECT_DIR$/sdk/services/ServiceRegistry.php" />
-        <option value="$PROJECT_DIR$/sdk/services/database/DbConnectionService.php" />
         <option value="$PROJECT_DIR$/sdk/services/database/adapters/MongoAdapter.php" />
         <option value="$PROJECT_DIR$/sdk/services/database/adapters/PostgreAdapter.php" />
         <option value="$PROJECT_DIR$/sdk/services/database/adapters/MysqlAdapter.php" />
         <option value="$PROJECT_DIR$/sdk/interfaces/DbAdapterInteface.php" />
+        <option value="$PROJECT_DIR$/sdk/services/database/DbConnectionService.php" />
       </list>
     </option>
   </component>
@@ -305,7 +305,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -363,14 +363,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/services/database/DbConnectionService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sdk/services/database/adapters/MongoAdapter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
@@ -397,8 +389,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sdk/interfaces/DbAdapterInteface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.019252548" vertical-offset="0" max-vertical-offset="883">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/services/database/DbConnectionService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15402038" vertical-offset="0" max-vertical-offset="883">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding />
         </state>
       </provider>
