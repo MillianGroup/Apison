@@ -1,5 +1,5 @@
 <?php
-namespace Apison/Sdk/Config;
+namespace Apison\Sdk\Config;
 
     class Config
     {

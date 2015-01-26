@@ -13,31 +13,35 @@ use Apison\Sdk\Config\Config;
     */
     class DbConnectionService implements DbAdapterInterface
     {
-        private $adapter;
 
+        private $adapter;
         $availibleAdapters = array(
             'mysql' => MysqlAdapter,
             'mongo' => MongoAdapter,
             'postgre' => PostgreAdapter,
         );
 
-        $configValues = Config::returnConfigValues();
 
-        $this->setAdapter($this->configValues['adapter']);
+        public function __construct()
+        {
+            $configValues = Config::returnConfigValues();
+            $this->setAdapter($this->configValues['adapter']);
+            $dbConn = $this->connect();
+        }
 
-        public function setAdapter($adapter)
+        private function setAdapter($adapter)
         {
             $this->adapter = $availibleAdapters[$adapter] || $availibleAdapters["mysql"];
         }
 
         public static function connect()
         {
-            $adapter::connect($configValues);
+            return $adapter::connect($this->configValues);
         }
 
         public static function findAll()
         {
-            //TODO
+            return $adapter::findAll(__CLASSNAME__);
         }
 
         public static function findOneByAttributes()
