@@ -41,7 +41,7 @@ use Apison\Sdk\Config\Config;
 
         public static function findAll()
         {
-            return $adapter::findAll(__CLASSNAME__);
+            return $adapter::findAll(__CLASS__);
         }
 
         public static function findOneByAttributes()
