@@ -28,7 +28,7 @@ use Apison\Sdk\Config\Config;
 
         public static function connect()
         {
-            return $adapter::connect(Config::returnConfigValues());
+            return $adapter::connect(Config::getConfigValues());
         }
 
         public static function findAll()

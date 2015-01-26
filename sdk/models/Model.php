@@ -8,7 +8,7 @@ use Apison\Sdk\Services\DbConnectionService;
     {
         public function __construct()
         {
-            $this->setAdapter(Config::returnConfigValues()['adapter']);
+            $this->setAdapter(Config::getConfigValues()['adapter']);
             $dbConn = $this->connect();
         }
     }
