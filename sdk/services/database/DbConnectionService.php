@@ -21,16 +21,18 @@ use Apison\Sdk\Config\Config;
             'postgre' => PostgreAdapter,
         );
 
-        $this->setAdapter(Config::getAdapter());
+        $configValues = Config::returnConfigValues();
+
+        $this->setAdapter($this->configValues['adapter']);
 
         public function setAdapter($adapter)
         {
-            $this->adapter = $availibleAdapters[$adapter] || "mysql";
+            $this->adapter = $availibleAdapters[$adapter] || $availibleAdapters["mysql"];
         }
 
         public static function connect()
         {
-            //TODO
+            $adapter::connect($configValues);
         }
 
         public static function findAll()

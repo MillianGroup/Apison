@@ -3,11 +3,18 @@ namespace Apison/Sdk/Config;
 
     class Config
     {
-        $adapter = "mysql";
+        $configValues = array(
+            'adapter' = "mysql",
+            'hostname' = "localhost:80",
+            'dbHost' = "localhost:3307",
+            'dbName' => 'apison',
+            'dbUser' => 'root',
+            'dbPass' => 'admin'
+        );
 
-        public static function getAdapter()
+        public static function getConfigValues()
         {
-            return $this->adapter;
+            return $this->configValues;
         }
 
     }
