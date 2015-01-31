@@ -16,13 +16,12 @@ class App {
 
     public function __construct()
     {
-        $dbConnectionService = new DbConnectionService();
-        ServiceRegistry::registerService('db.connection-service', $dbConnectionService);
-
         $configValues = Config::getConfigValues();
 
+        $dbConnectionService = new DbConnectionService($configValues);
         $dbConnectionService->setAdapter($configValues['adapter']);
-        $dbConn = $dbConnectionService->connect($configValues);
+        $dbConn = $dbConnectionService->connect();
+        ServiceRegistry::registerService('db.connection-service', $dbConnectionService);
     }
 
 

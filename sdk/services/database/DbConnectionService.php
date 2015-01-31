@@ -15,8 +15,9 @@ use Apison\Sdk\Config\Config;
     {
 
 
-        public function __construct() {
+        public function __construct($configValues) {
              $this->adapter = null;
+            $this->configValues = $configValues;
         }
 
         public function setAdapter($adapter = "mysql")
@@ -34,7 +35,7 @@ use Apison\Sdk\Config\Config;
 
         public function connect()
         {
-            return $this->adapter->connect(Config::getConfigValues());
+            return $this->adapter->connect($this->configValues);
         }
 
         public function findAll()
