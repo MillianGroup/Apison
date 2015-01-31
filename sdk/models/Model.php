@@ -2,7 +2,7 @@
 
 namespace Apison\Sdk\Models;
 
-use Apison\Sdk\Services\DbConnectionService;
+use Apison\Sdk\Services\Database\DbConnectionService as DbConnectionService;
 
     class Model extends DbConnectionService
     {

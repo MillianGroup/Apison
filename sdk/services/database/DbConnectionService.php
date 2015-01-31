@@ -11,7 +11,7 @@ use Apison\Sdk\Config\Config;
     takes care about changing the right database adapter
     Higher part of framework should communicate just with this class, not underlying classes.
     */
-    abstract class DbConnectionService implements DbAdapterInterface
+    class DbConnectionService implements DbAdapterInterface
     {
 
         private $adapter;

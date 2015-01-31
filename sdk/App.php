@@ -14,12 +14,16 @@ use Apison\Sdk\Services\ServiceRegistry;
 
 class App {
 
-    $dbConnectionService = new DbConnectionService();
-    ServiceRegistry::registerService('db.connection-service', $dbConnectionService);
+    public function __construct()
+    {
+        $dbConnectionService = new DbConnectionService();
+        ServiceRegistry::registerService('db.connection-service', $dbConnectionService);
 
-    $configValues = Config::getConfigValues();
+        $configValues = Config::getConfigValues();
 
-    $dbConnectionService->setAdapter($configValues['adapter']);
-    $dbConnectionService->connect($configValues);
+        $dbConnectionService->setAdapter($configValues['adapter']);
+        $dbConnectionService->connect($configValues);
+    }
+
 
 } 
