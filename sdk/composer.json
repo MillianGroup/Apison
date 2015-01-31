@@ -1,0 +1,12 @@
+{
+    "name": "MillianGroup/Apison",
+    "description": "Apison Framework",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Michal Takáč, František Ferko",
+            "email": "email.takac@gmail.com"
+        }
+    ]
+}

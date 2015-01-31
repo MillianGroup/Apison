@@ -17,7 +17,7 @@ class ServiceRegistry
     {
     }
 
-    public function registerService($serviceName, Service $serviceObj)
+    public function registerService($serviceName, $serviceObj)
     {
         $self->services[$serviceName] = $serviceObj;
     }
