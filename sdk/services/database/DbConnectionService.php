@@ -14,16 +14,24 @@ use Apison\Sdk\Config\Config;
     class DbConnectionService implements DbAdapterInterface
     {
 
-        private $adapter;
-        private $availibleAdapters = array(
-            'mysql' => MysqlAdapter::class,
-            'mongo' => MongoAdapter::class,
-            'postgre' => PostgreAdapter::class,
-        );
 
-        public function setAdapter($adapter)
+        public function __construct() {
+             $this->adapter = null;
+             $this->availibleAdapters = array(
+                'mysql' => new MysqlAdapter(),
+                'mongo' => new MongoAdapter(),
+                'postgre' => new PostgreAdapter(),
+            );
+        }
+
+        /*$mysqlAdapter = new MysqlAdapter();
+        $mongoAdapter = new MongoAdapter();
+        $postgreAdapter = new PostgreAdapter();*/
+
+
+        public function setAdapter($adapter = "mysql")
         {
-            $this->adapter = $this->availibleAdapters[$adapter] || $this->availibleAdapters["mysql"];
+            $this->adapter = $this->availibleAdapters[$adapter];
         }
 
         public function connect()

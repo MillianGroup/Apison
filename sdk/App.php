@@ -22,7 +22,7 @@ class App {
         $configValues = Config::getConfigValues();
 
         $dbConnectionService->setAdapter($configValues['adapter']);
-        $dbConnectionService->connect($configValues);
+        $dbConn = $dbConnectionService->connect($configValues);
     }
 
 
