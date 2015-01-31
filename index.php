@@ -19,5 +19,3 @@ require_once "sdk/services/ServiceRegistry.php";
 require_once "sdk/App.php";
 
 $app = new \Apison\Sdk\App();
-
-echo "Bla";

@@ -17,21 +17,19 @@ use Apison\Sdk\Config\Config;
 
         public function __construct() {
              $this->adapter = null;
-             $this->availibleAdapters = array(
-                'mysql' => new MysqlAdapter(),
-                'mongo' => new MongoAdapter(),
-                'postgre' => new PostgreAdapter(),
-            );
         }
-
-        /*$mysqlAdapter = new MysqlAdapter();
-        $mongoAdapter = new MongoAdapter();
-        $postgreAdapter = new PostgreAdapter();*/
-
 
         public function setAdapter($adapter = "mysql")
         {
-            $this->adapter = $this->availibleAdapters[$adapter];
+            if($adapter === 'mysql') {
+                $this->adapter = new MysqlAdapter();
+            } else if($adapter === 'mongo') {
+                $this->adapter = new MongoAdapter();
+            } else if($adapter === 'postgre') {
+                $this->adapter = new PostgreAdapter();
+            } else {
+                throw new \Exception("Unsupported database adapter was chosen.");
+            }
         }
 
         public function connect()
