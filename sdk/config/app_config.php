@@ -4,9 +4,9 @@ namespace Apison\Sdk\Config;
     class Config
     {
         private static $configValues = array(
-            'adapter' = "mysql",
-            'hostname' = "localhost:80",
-            'dbHost' = "localhost:3307",
+            'adapter' => 'mysql',
+            'hostname' => 'localhost',
+            'dbPort' => '3306',
             'dbName' => 'apison',
             'dbUser' => 'root',
             'dbPass' => 'admin'
@@ -14,7 +14,7 @@ namespace Apison\Sdk\Config;
 
         public static function getConfigValues()
         {
-            return $this->configValues;
+            return self::$configValues;
         }
 
     }

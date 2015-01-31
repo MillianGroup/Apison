@@ -14,8 +14,8 @@ use Apison\Sdk\Config\Config;
     abstract class DbConnectionService implements DbAdapterInterface
     {
 
-        private static $adapter;
-        private static $availibleAdapters = array(
+        private $adapter;
+        private $availibleAdapters = array(
             'mysql' => MysqlAdapter,
             'mongo' => MongoAdapter,
             'postgre' => PostgreAdapter,
@@ -23,20 +23,20 @@ use Apison\Sdk\Config\Config;
 
         private function setAdapter($adapter)
         {
-            $this->adapter = $self->availibleAdapters[$adapter] || $self->availibleAdapters["mysql"];
+            $this->adapter = $this->availibleAdapters[$adapter] || $this->availibleAdapters["mysql"];
         }
 
-        public static function connect()
+        public function connect()
         {
-            return $adapter::connect(Config::getConfigValues());
+            return $this->adapter->connect(Config::getConfigValues());
         }
 
-        public static function findAll()
+        public function findAll()
         {
-            return $adapter::findAll(__CLASS__);
+            return $this->adapter->findAll(__CLASS__);
         }
 
-        public static function findOneByAttributes()
+        public function findOneByAttributes()
         {
             //TODO
         }
