@@ -9,6 +9,8 @@
 namespace Apison\Sdk;
 
 use Apison\Sdk\Services\Database\DbConnectionService;
+use Apison\Sdk\Config\Config;
+use Apison\Sdk\Services\ServiceRegistry;
 
 class App {
 
