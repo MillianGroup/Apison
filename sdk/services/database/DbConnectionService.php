@@ -16,19 +16,19 @@ use Apison\Sdk\Config\Config;
 
         private $adapter;
         private $availibleAdapters = array(
-            'mysql' => MysqlAdapter,
-            'mongo' => MongoAdapter,
-            'postgre' => PostgreAdapter,
+            'mysql' => MysqlAdapter::class,
+            'mongo' => MongoAdapter::class,
+            'postgre' => PostgreAdapter::class,
         );
 
-        private function setAdapter($adapter)
+        public function setAdapter($adapter)
         {
             $this->adapter = $this->availibleAdapters[$adapter] || $this->availibleAdapters["mysql"];
         }
 
         public function connect()
         {
-            return $this->adapter->connect($configValues);
+            return $this->adapter->connect(Config::getConfigValues());
         }
 
         public function findAll()
@@ -41,7 +41,7 @@ use Apison\Sdk\Config\Config;
             //TODO
         }
 
-        public static function findByAttributes()
+        public function findByAttributes()
         {
             //TODO
         }

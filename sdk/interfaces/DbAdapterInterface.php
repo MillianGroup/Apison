@@ -6,10 +6,10 @@ namespace Apison\Sdk\Interfaces;
     */
     interface DbAdapterInterface
     {
-        public static function connect();
-        public static function findAll();
-        public static function findOneByAttributes();
-        public static function findByAttributes();
+        public function connect();
+        public function findAll();
+        public function findOneByAttributes();
+        public function findByAttributes();
     }
 
 ?>

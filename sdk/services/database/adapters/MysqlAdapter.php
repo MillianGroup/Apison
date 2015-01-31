@@ -8,7 +8,7 @@ namespace Apison\Sdk\Services\Database\Adapters;
     {
         public function connect($configValues)
         {
-            $connect = new mysqli($configValues['hostname'],$configValues['dbUser'],$configValues['dbPass'],$configValues['dbName'],$configValues['dbPort']);
+            $connect = new mysqli($configValues['hostname'],$configValues['dbUser'],$configValues['dbPass'],$configValues['dbName']);
 
             return $connect;
         }

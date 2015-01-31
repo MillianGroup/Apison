@@ -3,13 +3,13 @@ namespace Apison\Sdk\Config;
 
     class Config
     {
-        private static $configValues = array(
+        public static $configValues = array(
             'adapter' => 'mysql',
             'hostname' => 'localhost',
             'dbPort' => '3306',
             'dbName' => 'apison',
             'dbUser' => 'root',
-            'dbPass' => 'admin'
+            'dbPass' => 'franky238'
         );
 
         public static function getConfigValues()
