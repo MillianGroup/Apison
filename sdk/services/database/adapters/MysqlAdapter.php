@@ -19,7 +19,7 @@ namespace Apison\Sdk\Services\Database\Adapters;
 
         public function findAll($class)
         {
-            $query = 'SELECT * FROM ' . $class;
+            $query = 'SELECT * FROM `' . $class . '`';
             $results = MysqlAdapter::connect()->query($query);
 
             return $results;
@@ -27,7 +27,7 @@ namespace Apison\Sdk\Services\Database\Adapters;
 
         public function findOneByAttributes($attributes, $class)
         {
-            $query = 'SELECT * FROM ' . $class . ' WHERE ';
+            $query = 'SELECT * FROM `' . $class . '` WHERE ';
             $start = true;
 
             foreach($attributes as $key => $value)
@@ -47,7 +47,7 @@ namespace Apison\Sdk\Services\Database\Adapters;
 
         public function findByAttributes($attributes, $class)
         {
-            $query = 'SELECT * FROM ' . $class . ' WHERE ';
+            $query = 'SELECT * FROM `' . $class . '` WHERE ';
             $start = true;
 
             foreach($attributes as $key => $value)
@@ -56,7 +56,7 @@ namespace Apison\Sdk\Services\Database\Adapters;
                 {
                     $query .= ' AND ';
                 }
-                $query .= $key . ' = ' . $value;
+                $query .= $key . ' = "' . $value . '"';
                 $start = false;
             }
             $results = MysqlAdapter::connect()->query($query);
