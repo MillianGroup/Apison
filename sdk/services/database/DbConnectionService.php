@@ -38,9 +38,10 @@ use Apison\Sdk\Config\Config;
             return $this->adapter->connect($this->configValues);
         }
 
-        public function findAll()
+        public function findAll($class)
         {
-            return $this->adapter->findAll(__CLASS__);
+            return $this->adapter->findAll($class);
+            //return $this->adapter->findAll(__CLASS__);
         }
 
         public function findOneByAttributes($attributes)

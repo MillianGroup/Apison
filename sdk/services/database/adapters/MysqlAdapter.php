@@ -5,13 +5,16 @@ namespace Apison\Sdk\Services\Database\Adapters;
     /*
     Implement methods to work with MySQL connection
     */
+    use Apison\Sdk\App;
+
     class MysqlAdapter
     {
+        public $dbConn;
         public function connect($configValues)
         {
             try {
-                $connect = new \mysqli($configValues['hostname'],$configValues['dbUser'],$configValues['dbPass'],$configValues['dbName'],$configValues['dbPort']);
-                return $connect;
+                $this->dbConn = new \mysqli($configValues['hostname'],$configValues['dbUser'],$configValues['dbPass'],$configValues['dbName'],$configValues['dbPort']);
+                return $this->dbConn ;
             } catch (\mysqli_sql_exception $e) {
                 echo "MySQL Adapter exception: " . $e->getMessage() . "\n";
             }
@@ -20,8 +23,7 @@ namespace Apison\Sdk\Services\Database\Adapters;
         public function findAll($class)
         {
             $query = 'SELECT * FROM `' . $class . '`';
-
-            return $this->query($query);
+            return $this->dbConn->query($query);
         }
 
         public function findOneByAttributes($attributes, $class)
@@ -40,7 +42,7 @@ namespace Apison\Sdk\Services\Database\Adapters;
             }
             $query .= ' LIMIT 1';
 
-            return $this->query($query);
+            return $this->dbConn->query($query);
         }
 
         public function findByAttributes($attributes, $class)
@@ -57,8 +59,7 @@ namespace Apison\Sdk\Services\Database\Adapters;
                 $query .= $key . ' = "' . $value . '"';
                 $start = false;
             }
-
-            return $this->query($query);
+            return $this->dbConn->query($query);
         }
     }
 
