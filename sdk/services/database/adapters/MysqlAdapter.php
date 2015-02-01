@@ -25,9 +25,21 @@ namespace Apison\Sdk\Services\Database\Adapters;
             return $results;
         }
 
-        public function findOneByAttributes()
+        public function findOneByAttributes($class, $attributes)
         {
-            $query = "SELECT * FROM ";
+            $query = 'SELECT * FROM ' . $class . ' WHERE ';
+            $start = true;
+
+            foreach($attributes as $key => $value)
+            {
+                if($start === false)
+                {
+                    $query .= ' AND ';
+                }
+                $query .= $key . ' = ' . $value;
+                $start = false;
+            }
+            $query .= ' LIMIT 1';
             $result = MysqlAdapter::connect()->query($query);
 
             return $result;

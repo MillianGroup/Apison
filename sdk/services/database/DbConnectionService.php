@@ -43,9 +43,9 @@ use Apison\Sdk\Config\Config;
             return $this->adapter->findAll(__CLASS__);
         }
 
-        public function findOneByAttributes()
+        public function findOneByAttributes($attributes)
         {
-            //TODO
+            return $this->adapter->findOneByAttributes(__CLASS__, $attributes);
         }
 
         public function findByAttributes()
