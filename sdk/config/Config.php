@@ -9,7 +9,7 @@ namespace Apison\Sdk\Config;
             'dbPort' => '3306',
             'dbName' => 'apison',
             'dbUser' => 'root',
-            'dbPass' => ''
+            'dbPass' => 'franky238'
         );
 
         public static function getConfigValues()

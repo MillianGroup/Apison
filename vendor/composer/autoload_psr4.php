@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Apison\\' => array($baseDir . '/sdk'),
+    'Apison\\Sdk\\' => array($baseDir . '/sdk'),
 );
