@@ -20,7 +20,7 @@ namespace Apison\Sdk\Services\Database\Adapters;
         public function findAll($class)
         {
             $query = 'SELECT * FROM `' . $class . '`';
-            $results = MysqlAdapter::connect()->query($query);
+            $results = $connect->query($query);
 
             return $results;
         }
