@@ -8,8 +8,8 @@ namespace Apison\Sdk\Interfaces;
     {
         public function connect();
         public function findAll();
-        public function findOneByAttributes();
-        public function findByAttributes();
+        public function findOneByAttributes($attributes);
+        public function findByAttributes($attributes);
     }
 
 ?>
