@@ -16,7 +16,7 @@ use Apison\Sdk\Config\Config;
 
 
         public function __construct($configValues) {
-             $this->adapter = null;
+            $this->adapter = null;
             $this->configValues = $configValues;
         }
 

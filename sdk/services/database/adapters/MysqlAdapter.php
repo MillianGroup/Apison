@@ -20,9 +20,8 @@ namespace Apison\Sdk\Services\Database\Adapters;
         public function findAll($class)
         {
             $query = 'SELECT * FROM `' . $class . '`';
-            $results = $connect->query($query);
 
-            return $results;
+            return $this->query($query);
         }
 
         public function findOneByAttributes($attributes, $class)
@@ -40,9 +39,8 @@ namespace Apison\Sdk\Services\Database\Adapters;
                 $start = false;
             }
             $query .= ' LIMIT 1';
-            $result = MysqlAdapter::connect()->query($query);
 
-            return $result;
+            return $this->query($query);
         }
 
         public function findByAttributes($attributes, $class)
@@ -59,9 +57,8 @@ namespace Apison\Sdk\Services\Database\Adapters;
                 $query .= $key . ' = "' . $value . '"';
                 $start = false;
             }
-            $results = MysqlAdapter::connect()->query($query);
 
-            return $results;
+            return $this->query($query);
         }
     }
 
