@@ -36,7 +36,7 @@ namespace Apison\Sdk\Services\Database\Adapters;
                 {
                     $query .= ' AND ';
                 }
-                $query .= $key . ' = ' . $value;
+                $query .= $key . ' = "' . $value . '"';
                 $start = false;
             }
             $query .= ' LIMIT 1';
