@@ -10,7 +10,7 @@ namespace Apison\Sdk\Services\Database\Adapters;
         public function connect($configValues)
         {
             try {
-                $connect = new \mysqli($configValues['hostname'],$configValues['dbUser'],$configValues['dbPass'],$configValues['dbName']);
+                $connect = new \mysqli($configValues['hostname'],$configValues['dbUser'],$configValues['dbPass'],$configValues['dbName'],$configValues['dbPort']);
                 return $connect;
             } catch (\mysqli_sql_exception $e) {
                 echo "MySQL Adapter exception: " . $e->getMessage() . "\n";
