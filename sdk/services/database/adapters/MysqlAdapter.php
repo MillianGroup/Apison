@@ -45,9 +45,20 @@ namespace Apison\Sdk\Services\Database\Adapters;
             return $result;
         }
 
-        public function findByAttributes()
+        public function findByAttributes($attributes, $class)
         {
-            $query = "SELECT * FROM ";
+            $query = 'SELECT * FROM ' . $class . ' WHERE ';
+            $start = true;
+
+            foreach($attributes as $key => $value)
+            {
+                if($start === false)
+                {
+                    $query .= ' AND ';
+                }
+                $query .= $key . ' = ' . $value;
+                $start = false;
+            }
             $results = MysqlAdapter::connect()->query($query);
 
             return $results;

@@ -45,12 +45,12 @@ use Apison\Sdk\Config\Config;
 
         public function findOneByAttributes($attributes)
         {
-            return $this->adapter->findOneByAttributes(__CLASS__, $attributes);
+            return $this->adapter->findOneByAttributes($attributes, __CLASS__);
         }
 
-        public function findByAttributes()
+        public function findByAttributes($attributes)
         {
-            //TODO
+            return $this->adapter->findByAttributes($attributes, __CLASS__);
         }
     }
 
