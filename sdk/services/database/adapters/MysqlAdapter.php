@@ -25,7 +25,7 @@ namespace Apison\Sdk\Services\Database\Adapters;
             return $results;
         }
 
-        public function findOneByAttributes($class, $attributes)
+        public function findOneByAttributes($attributes, $class)
         {
             $query = 'SELECT * FROM ' . $class . ' WHERE ';
             $start = true;
