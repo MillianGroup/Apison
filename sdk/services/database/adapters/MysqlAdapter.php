@@ -23,22 +23,46 @@ namespace Apison\Sdk\Services\Database\Adapters;
         public function findAll($class)
         {
             $query = 'SELECT * FROM ' . $class;
+            $query = 'SELECT * FROM `' . $class . '`';
             $results = $this->dbConn->query($query);
 
             return $results;
         }
 
-        public function findOneByAttributes()
+        public function findOneByAttributes($attributes, $class)
         {
-            $query = "SELECT * FROM ";
+            $query = 'SELECT * FROM `' . $class . '` WHERE ';
+            $start = true;
+
+            foreach($attributes as $key => $value)
+            {
+                if($start === false)
+                {
+                    $query .= ' AND ';
+                }
+                $query .= $key . ' = "' . $value . '"';
+                $start = false;
+            }
+            $query .= ' LIMIT 1';
             $result = $this->dbConn->query($query);
 
             return $result;
         }
 
-        public function findByAttributes()
+        public function findByAttributes($attributes, $class)
         {
-            $query = "SELECT * FROM ";
+            $query = 'SELECT * FROM `' . $class . '` WHERE ';
+            $start = true;
+
+            foreach($attributes as $key => $value)
+            {
+                if($start === false)
+                {
+                    $query .= ' AND ';
+                }
+                $query .= $key . ' = "' . $value . '"';
+                $start = false;
+            }
             $results = $this->dbConn->query($query);
 
             return $results;
