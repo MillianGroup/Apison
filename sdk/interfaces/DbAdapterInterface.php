@@ -7,7 +7,7 @@ namespace Apison\Sdk\Interfaces;
     interface DbAdapterInterface
     {
         public function connect();
-        public function findAll();
+        public function findAll($class);
         public function findOneByAttributes();
         public function findByAttributes();
     }
