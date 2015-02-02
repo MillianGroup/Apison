@@ -19,12 +19,12 @@ class ServiceRegistry
 
     public static function registerService($serviceName, $serviceObj)
     {
-        $self->services[$serviceName] = $serviceObj;
+        self::$services[$serviceName] = $serviceObj;
     }
 
     public static function getService($serviceName)
     {
-        return $self->services[$serviceName];
+        return self::$services[$serviceName];
     }
 
 }

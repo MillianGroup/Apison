@@ -22,11 +22,8 @@ namespace Apison\Sdk\Services\Database\Adapters;
 
         public function findAll($class)
         {
-            $query = 'SELECT * FROM ' . $class;
             $query = 'SELECT * FROM `' . $class . '`';
-            $results = $this->dbConn->query($query);
-
-            return $results;
+            return $this->dbConn->query($query);
         }
 
         public function findOneByAttributes($attributes, $class)
@@ -44,9 +41,8 @@ namespace Apison\Sdk\Services\Database\Adapters;
                 $start = false;
             }
             $query .= ' LIMIT 1';
-            $result = $this->dbConn->query($query);
 
-            return $result;
+            return $this->dbConn->query($query);
         }
 
         public function findByAttributes($attributes, $class)
@@ -60,12 +56,29 @@ namespace Apison\Sdk\Services\Database\Adapters;
                 {
                     $query .= ' AND ';
                 }
-                $query .= $key . ' = "' . $value . '"';
+                if(is_array($value) === true)
+                {
+                    $last_loop = count($value);
+                    $query .= $key . ' IN(';
+                    $i = 0;
+                    foreach($value as $section)
+                    {
+                        $i++;
+                        $query .= '"' . $section . '"';
+                        if($i != $last_loop)
+                        {
+                            $query .= ',';
+                        }
+                    }
+                    $query .= ')';
+                }
+                else
+                {
+                    $query .= $key . ' = "' . $value . '"';
+                }
                 $start = false;
             }
-            $results = $this->dbConn->query($query);
-
-            return $results;
+            return $this->dbConn->query($query);
         }
     }
 
