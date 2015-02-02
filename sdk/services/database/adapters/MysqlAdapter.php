@@ -56,7 +56,26 @@ namespace Apison\Sdk\Services\Database\Adapters;
                 {
                     $query .= ' AND ';
                 }
-                $query .= $key . ' = "' . $value . '"';
+                if(is_array($value) === true)
+                {
+                    $last_loop = count($value);
+                    $query .= $key . ' IN(';
+                    $i = 0;
+                    foreach($value as $section)
+                    {
+                        $i++;
+                        $query .= '"' . $section . '"';
+                        if($i != $last_loop)
+                        {
+                            $query .= ',';
+                        }
+                    }
+                    $query .= ')';
+                }
+                else
+                {
+                    $query .= $key . ' = "' . $value . '"';
+                }
                 $start = false;
             }
             return $this->dbConn->query($query);
